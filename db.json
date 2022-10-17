@@ -1,0 +1,9 @@
+{
+  "feedbacks": [
+    {
+      "text": "This is new integ test passed for update",
+      "rating": 9,
+      "id": 2
+    }
+  ]
+}

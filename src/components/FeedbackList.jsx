@@ -2,12 +2,17 @@ import FeedbackItem from './FeedbackItem';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContext } from 'react';
 import FeedbackContext from '../context/feedbackContext';
+import Loader from './shared/Loader';
 
 const FeedbackList = () => {
-  const { feedbacks } = useContext(FeedbackContext);
+  const { feedbacks, loading } = useContext(FeedbackContext);
 
-  if (!feedbacks) {
-    return <p>No feedback yet</p>;
+  if (!loading && feedbacks.length === 0) {
+    return <p>No feedbacks yet</p>;
+  }
+
+  if (loading) {
+    return <Loader />;
   }
 
   return (
